@@ -39,7 +39,7 @@ services:
       # Express:
 
     volumes:
-      - mssqlvolume:/var/opt/mssql/data # thư mục lưu DB
+      - vmssql:/var/opt/mssql # thư mục lưu DB
       - ./bk:/var/opt/mssql/backup      # thư  mục chứa file backup
     ports:
       - "1433:1433"                     # cổng kết nối
@@ -49,4 +49,5 @@ networks:
   mynetwork:
     driver: bridge
 volumes:
-    mssqlvolume:
+    vmssql:
+      external: true
