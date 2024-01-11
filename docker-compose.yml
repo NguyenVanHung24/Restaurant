@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # React App
+  client:
+    build:
+      context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+    depends_on:
+      - api
+
+  # ASP.NET Core API
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Data Source=db;Database=RestaurantDB;user id=sa;password=Password789;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=false"
+    networks:
+      - mynetwork
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    container_name: db         # tên container
+    restart: always
+    hostname: mssql
+    environment:
+      SA_PASSWORD: Password789          #Thiết lập password
+      ACCEPT_EULA: Y
+      # Express:
+
+    volumes:
+      - mssqlvolume:/var/opt/mssql/data # thư mục lưu DB
+      - ./bk:/var/opt/mssql/backup      # thư  mục chứa file backup
+    ports:
+      - "1433:1433"                     # cổng kết nối
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
+volumes:
+    mssqlvolume:
