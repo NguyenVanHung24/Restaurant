@@ -3,10 +3,11 @@ name: BuildFE
 on:
   push:
     branches:
-      #- fe
+      - fe
       - main
   pull_request:
     branches:
+      - fe
       - main
 env:
   # Use docker.io for Docker Hub if empty
