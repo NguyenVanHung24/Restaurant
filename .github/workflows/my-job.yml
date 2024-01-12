@@ -1,0 +1,23 @@
+name: My Jobs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [self-hosted, some-label]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
+      - run: cd restaurant-app
+      - run: npm install
+      - name: Build App
+        run: npm run build
+  build_image:
+    runs-on: [self-hosted, some-label]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t my-app .

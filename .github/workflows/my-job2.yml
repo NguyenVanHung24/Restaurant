@@ -1,0 +1,22 @@
+name: My Jobs2
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [self-hosted, some-label]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+           dotnet-version: .0.x
+      - run: cd server
+      - run: dotnet restore
+      - name: Build App
+        run: dotnet run
+  build_image:
+    runs-on: [self-hosted, some-label]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t my-appapi .
