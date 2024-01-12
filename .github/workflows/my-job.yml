@@ -11,29 +11,29 @@ on:
 
 
 jobs:
-  build:
-    runs-on: [self-hosted, some-label]
-    defaults:
-      run:
-        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm install
-      - name: Build App
-        run: npm run build
+  # build:
+  #   runs-on: [self-hosted, some-label]
+  #   defaults:
+  #     run:
+  #       working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #     - run: npm install
+  #     - name: Build App
+  #       run: npm run build
 
-  build_image:
-    runs-on: [self-hosted, some-label]
-    defaults:
-      run:
-        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build Docker image
-        run: docker build -t my-app .
+  # build_image:
+  #   runs-on: [self-hosted, some-label]
+  #   defaults:
+  #     run:
+  #       working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Build Docker image
+  #       run: docker build -t my-app .
   pushimage:
     runs-on: [self-hosted, some-label]      
     steps:
@@ -42,6 +42,7 @@ jobs:
       with:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
+    - run: echo ${{ secrets.USERNAME }}  
 
     - name: Build and push
       uses: docker/build-push-action@v5
