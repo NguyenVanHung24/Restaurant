@@ -62,4 +62,6 @@ jobs:
       with:
         tags: ${{ secrets.DOCKER_IMAGE_FE}}:latest
         push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-    
+        labels: ${{ steps.meta.outputs.labels }}
+        context: ./
+        file: ./Dockerfile
