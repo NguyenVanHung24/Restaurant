@@ -10,12 +10,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd ..
-      - run: cd ..   
+
       - run: ls 
       - run: pwd  
       - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
-      - run: cd restaurant-app
+      - run: cd restaurant
       - run: npm install
       - name: Build App
         run: npm run build
@@ -23,5 +22,7 @@ jobs:
     runs-on: [self-hosted, some-label]
     steps:
       - uses: actions/checkout@v3
+      - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
+      - run: cd restaurant
       - name: Build Docker image
         run: docker build -t my-app .
