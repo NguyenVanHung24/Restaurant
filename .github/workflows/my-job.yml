@@ -10,6 +10,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: cd ..
+      - run: cd ..   
+      - run: ls 
+      - run: pwd  
       - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
       - run: cd restaurant-app
       - run: npm install
