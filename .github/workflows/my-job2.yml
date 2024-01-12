@@ -17,7 +17,7 @@ jobs:
         working-directory: ./server
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-dotnet@v3
         with:
            dotnet-version: 7
       - run: dotnet restore
