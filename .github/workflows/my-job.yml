@@ -3,6 +3,7 @@ name: BuildFE
 on:
   push:
     branches:
+      - fe
       - main
   pull_request:
     branches:
