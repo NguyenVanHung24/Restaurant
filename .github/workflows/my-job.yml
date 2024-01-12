@@ -21,6 +21,7 @@ jobs:
       - run: ls 
       - run: pwd  
       - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
+      - run: ls 
       - run: cd restaurant
       - run: npm install
       - name: Build App

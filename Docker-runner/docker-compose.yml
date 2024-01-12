@@ -12,7 +12,7 @@ services:
       LABELS: some-label
       REPO_URL: https://github.com/NguyenVanHung24/Restaurant
       EPHEMERAL: 1
-      ACCESS_TOKEN: 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
+      ACCESS_TOKEN: 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
     deploy:
       replicas: 1
       resources:
