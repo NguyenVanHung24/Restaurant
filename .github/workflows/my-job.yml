@@ -57,3 +57,4 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
         context: "{{defaultContext}}"
         labels: ${{ steps.meta.outputs.labels }}
+        file: ./Dockerfile
