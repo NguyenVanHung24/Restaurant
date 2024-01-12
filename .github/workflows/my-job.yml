@@ -1,4 +1,4 @@
-name: My Jobs
+name: BuildFE
 
 on:
   push:
@@ -12,25 +12,24 @@ on:
 jobs:
   build:
     runs-on: [self-hosted, some-label]
+    defaults:
+      run:
+        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - run: ls 
-      - run: pwd  
-      - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
-      - run: ls 
-      - run: cd restaurant
       - run: npm install
       - name: Build App
         run: npm run build
+
   build_image:
     runs-on: [self-hosted, some-label]
+    defaults:
+      run:
+        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
     steps:
       - uses: actions/checkout@v3
-      - run: cd React-js-Master-Detail-CRUD-with-Asp.Net-Web-API
-      - run: cd restaurant
       - name: Build Docker image
         run: docker build -t my-app .

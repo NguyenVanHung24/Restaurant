@@ -1,4 +1,4 @@
-name: My Jobs2
+name: BuildBe
 
 on:
   push:
@@ -12,19 +12,23 @@ on:
 jobs:
   build:
     runs-on: [self-hosted, some-label]
+    defaults:
+      run:
+        working-directory: ./server
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-           dotnet-version: 7.0.x 
-      - run: cd server
+           dotnet-version: 7.0.x
       - run: dotnet restore
       - name: Build App
-        run: dotnet run
+        run: dotnet build
   build_image:
     runs-on: [self-hosted, some-label]
+    defaults:
+      run:
+        working-directory: ./server
     steps:
       - uses: actions/checkout@v3
-      - run: cd server
       - name: Build Docker image
         run: docker build -t my-appapi .
