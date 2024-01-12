@@ -37,17 +37,17 @@ jobs:
   pushimage:
     runs-on: [self-hosted, some-label] 
 
-    # defaults:
-    #   run:
-    #     working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant     
+    defaults:
+      run:
+        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant     
     steps:
 
     # - name: Checkout
     #   uses: actions/checkout@v3
 
-    - name: Setup Docker Buildx
-      uses: docker/setup-buildx-action@v1
-      id: buildx
+    # - name: Setup Docker Buildx
+    #   uses: docker/setup-buildx-action@v1
+    #   id: buildx
     
 
     - name: Login to Docker Hub
@@ -62,6 +62,4 @@ jobs:
       with:
         tags: ${{ secrets.DOCKER_IMAGE_FE}}:latest
         push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-        labels: ${{ steps.meta.outputs.labels }}
-        context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
-        file: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant/Dockerfile
+    
