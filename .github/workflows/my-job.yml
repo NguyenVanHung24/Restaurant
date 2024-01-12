@@ -55,6 +55,5 @@ jobs:
       with:
         tags: ${{ secrets.DOCKER_IMAGE_FE}}:latest
         push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
+        context: "{{defaultContext}}"
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
