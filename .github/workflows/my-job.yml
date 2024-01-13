@@ -64,4 +64,4 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
         labels: ${{ steps.meta.outputs.labels }}
         context: ./
-        file: ./Dockerfile
+        file: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant/Dockerfile
