@@ -54,14 +54,13 @@ jobs:
       uses: docker/login-action@v3
       with:
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        password: ${{ secrets.DOCKER_TOKEN }}
     
-    - run: ls
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
-        tags: ${{ secrets.DOCKER_IMAGE_FE}}:latest
-        push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
+        tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+        push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
         context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant   
         file: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant/Dockerfile
