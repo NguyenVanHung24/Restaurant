@@ -32,9 +32,25 @@ jobs:
   #   - uses: actions/checkout@v2
   #   - name: Test the Docker image
   #     run: docker-compose up -d 
+  build:
+    runs-on: [self-hosted, some-label]
+    defaults:
+      run:
+        working-directory: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - name: Build App
+        run: npm run build
+
+  
+  
   push_to_registry:
     name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, some-label]
     steps:
     - name: Check out the repo
       uses: actions/checkout@v3
