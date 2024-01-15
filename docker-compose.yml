@@ -24,7 +24,7 @@ services:
       - db
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Data Source=db;Database=RestaurantDB;user id=sa;password=Password789;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=false"
+      ConnectionStrings__DefaultConnection: "Data Source=localhost;Database=RestaurantDB;user id=sa;password=Password789;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=false"
     networks:
       - mynetwork
 
@@ -47,7 +47,7 @@ services:
       - mynetwork
 networks:
   mynetwork:
-    driver: bridge
+    external: true
 volumes:
     vmssql:
       external: true
