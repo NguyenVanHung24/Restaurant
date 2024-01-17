@@ -5,11 +5,11 @@ services:
   client:
     build:
       context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant-app
-      dockerfile: Dockerfile
+      dockerfile: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant-app/Dockerfile
     ports:
       - "3000:3000"
-    networks:
-      - mynetwork
+    # networks:
+    #   - mynetwork
     depends_on:
       - api
 
@@ -17,37 +17,34 @@ services:
   api:
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: ./server/Dockerfile
     ports:
       - "5000:5000"
     depends_on:
       - db
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Data Source=localhost;Database=RestaurantDB;user id=sa;password=Password789;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=false"
-    networks:
-      - mynetwork
+    # networks:
+    #   - mynetwork
 
   db:
     image: "mcr.microsoft.com/mssql/server:2017-latest"
-    container_name: db         # tên container
     restart: always
-    hostname: mssql
     environment:
       SA_PASSWORD: Password789          #Thiết lập password
       ACCEPT_EULA: Y
       # Express:
-
     volumes:
-      - vmssql:/var/opt/mssql # thư mục lưu DB
+      - ./data/data:/var/opt/mssql/data
+      - ./data/log:/var/opt/mssql/log # thư mục lưu DB
       - ./bk:/var/opt/mssql/backup      # thư  mục chứa file backup
     ports:
       - "1433:1433"                     # cổng kết nối
-    networks:
-      - mynetwork
-networks:
-  mynetwork:
-    external: true
-volumes:
-    vmssql:
-      external: true
+    # networks:
+    #   - mynetwork
+# networks:
+#   mynetwork:
+#     driver: bridge
+# volumes:
+#     vmssql:
+#       external: true
