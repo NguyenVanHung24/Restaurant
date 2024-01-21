@@ -76,7 +76,7 @@ jobs:
         context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant   
         file: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant/Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: ${{ env.IMAGE_NAME }}:latest
         labels: ${{ steps.meta.outputs.labels }}
    
     # - name: SSH deploy
