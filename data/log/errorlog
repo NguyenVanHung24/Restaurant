@@ -66,3 +66,5 @@
 2024-01-23 14:12:25.18 spid23s     The Database Mirroring endpoint is in disabled or stopped state.
 2024-01-23 14:12:25.19 spid23s     Service Broker manager has started.
 2024-01-23 14:12:25.20 spid6s      Recovery is complete. This is an informational message only. No user action is required.
+2024-01-23 14:19:19.95 spid53      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2024-01-23 14:19:19.97 spid53      Using 'xplog70.dll' version '2017.140.3465' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
