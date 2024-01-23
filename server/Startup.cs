@@ -42,7 +42,14 @@ namespace RestaurantAPI
                             .AllowAnyMethod();
                 });
             });
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)
+               .AddEnvironmentVariables();
 
+            IConfiguration configuration = builder.Build();
+
+            services.AddSingleton<IConfiguration>(configuration);
             services.AddDbContext<RestaurantDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://35.240.134.185:5000/api/';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const ENDPIONTS = {
     CUSTOMER: 'Customer',
@@ -12,6 +12,7 @@ const instance = axios.create({
     baseURL: BASE_URL,
     // timeout: 10000,
   });
+// export {BASE_URL};
 
 export const createAPIEndpoint = endpoint => {
 
