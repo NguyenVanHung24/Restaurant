@@ -84,5 +84,8 @@ jobs:
         with:
           ORIGIN: ${{ secrets.SSH_HOST }}
           USER: ${{ secrets.SSH_USER }}
+          NAME: production
           SSHKEY: ${{ secrets.SSH_KEY }}
-      - run: echo "heee"
+      - run: ssh production ls --help
+      - run: cd restaurant
+      - run: ls 
