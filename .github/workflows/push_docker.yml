@@ -78,7 +78,17 @@ jobs:
     #     push: true
     #     tags: ${{ env.IMAGE_NAME }}:latest
     #     labels: ${{ steps.meta.outputs.labels }}
-   
+      
+
+      - name: SSH deploy
+        uses: appleboy/ssh-action@master
+        with:
+          ost: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            ls
+
       - name: SSH deploy
         uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
         with:
