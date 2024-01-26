@@ -31,15 +31,15 @@ jobs:
       - run: dotnet restore
       - name: Build App
         run: dotnet build
-  build_image:
-    runs-on: [self-hosted, some-label]
-    defaults:
-      run:
-        working-directory: ./server
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build Docker image
-        run: docker build -t my-appapi .
+  # build_image:
+  #   runs-on: [self-hosted, some-label]
+  #   defaults:
+  #     run:
+  #       working-directory: ./server
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Build Docker image
+  #       run: docker build -t my-appapi .
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: [self-hosted, some-label]
