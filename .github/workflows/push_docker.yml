@@ -85,7 +85,7 @@ jobs:
           ORIGIN: ${{ secrets.SSH_HOST }}
           USER: ${{ secrets.SSH_USER }}
           NAME: production
-          SSHKEY: ${{ secrets.SSH_KEY }}
+          SSHKEY: ${{ env.SSH_KEY }}
       - run: ssh production "ls -la;id; echo hehe > h.txt "
 
       - uses: actions/checkout@v2 
