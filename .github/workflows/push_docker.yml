@@ -80,10 +80,9 @@ jobs:
     #     labels: ${{ steps.meta.outputs.labels }}
    
       - name: SSH deploy
-        uses: appleboy/ssh-action@v1.0.3
+        uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            echo "hello"
+          ORIGIN: ${{ secrets.SSH_HOST }}
+          USER: ${{ secrets.SSH_USER }}
+          SSHKEY: ${{ secrets.SSH_KEY }}
+      - run: echo "heee"
