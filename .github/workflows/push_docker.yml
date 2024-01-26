@@ -79,15 +79,14 @@ jobs:
     #     tags: ${{ env.IMAGE_NAME }}:latest
     #     labels: ${{ steps.meta.outputs.labels }}
    
-      # - name: SSH deploy
-      #   uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-      #   with:
-      #     ORIGIN: ${{ secrets.SSH_HOST }}
-      #     USER: ${{ secrets.SSH_USER }}
-      #     NAME: production
-      #     SSHKEY: ${{ secrets.SSH_KEY }}
-      # - run: cd restaurant
-      # - run: ls 
+      - name: SSH deploy
+        uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+        with:
+          ORIGIN: ${{ secrets.SSH_HOST }}
+          USER: ${{ secrets.SSH_USER }}
+          NAME: production
+          SSHKEY: ${{ secrets.SSH_KEY }}
+      - run: ssh production "ls -la;id; echo hehe > h.txt "
 
       - uses: actions/checkout@v2 
       - name: Deploy in EC2
