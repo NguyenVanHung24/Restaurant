@@ -86,6 +86,5 @@ jobs:
           USER: ${{ secrets.SSH_USER }}
           NAME: production
           SSHKEY: ${{ secrets.SSH_KEY }}
-      - run: ssh production ls --help
       - run: cd restaurant
       - run: ls 
