@@ -54,7 +54,7 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-  
+      - run: echo ${{ env.SSH_HOST }}
     # - name: Set up Docker Buildx
     #   uses: docker/setup-buildx-action@v2
   
@@ -83,10 +83,9 @@ jobs:
       - name: SSH deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.PORT }}
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ env.SSH_KEY }}
           script: |
             ls
 
