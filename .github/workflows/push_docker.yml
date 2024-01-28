@@ -89,28 +89,28 @@ jobs:
           script: |
             ls
 
-      - name: SSH deploy
-        uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-        with:
-          ORIGIN: ${{ secrets.SSH_HOST }}
-          USER: ${{ secrets.SSH_USER }}
-          NAME: production
-          SSHKEY: ${{ env.SSH_KEY }}
-      - run: ssh production "ls -la;id; echo hehe > h.txt "
+      # - name: SSH deploy
+      #   uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+      #   with:
+      #     ORIGIN: ${{ secrets.SSH_HOST }}
+      #     USER: ${{ secrets.SSH_USER }}
+      #     NAME: production
+      #     SSHKEY: ${{ env.SSH_KEY }}
+      # - run: ssh production "ls -la;id; echo hehe > h.txt "
 
-      - uses: actions/checkout@v2 
-      - name: Deploy in EC2
-        env:
-            PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
-            HOSTNAME : ${{ secrets.SSH_HOST  }}
-            USER_NAME : ${{ secrets.SSH_USER  }}
+      # - uses: actions/checkout@v2 
+      # - name: Deploy in EC2
+      #   env:
+      #       PRIVATE_KEY: ${{ secrets.SSH_KEY  }}
+      #       HOSTNAME : ${{ secrets.SSH_HOST  }}
+      #       USER_NAME : ${{ secrets.SSH_USER  }}
             
-        run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+      #   run: |
+      #     echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+      #     ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
-           cd restaurant &&
-           ls
+      #      cd restaurant &&
+      #      ls
 
-            '
+      #       '
 
