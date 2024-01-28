@@ -48,10 +48,14 @@ namespace RestaurantAPI
                .AddEnvironmentVariables();
 
             IConfiguration configuration = builder.Build();
+                        // In your Startup.cs or Program.cs, add the following line:
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            Console.WriteLine($"Current environment: {environment}");
 
             services.AddSingleton<IConfiguration>(configuration);
             services.AddDbContext<RestaurantDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            Console.WriteLine(Configuration.GetConnectionString("DevConnection"));
 
         }
 

@@ -18,4 +18,4 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Start the application
-ENTRYPOINT ["dotnet", "RestaurantAPI.dll"]
+ENTRYPOINT ["dotnet", "RestaurantAPI.dll", "--environment=Production"]

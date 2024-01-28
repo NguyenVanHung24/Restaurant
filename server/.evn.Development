@@ -1,0 +1,1 @@
+DB_CONNECTION_STRING="Data Source=localhost;Database=RestaurantDB;user id=sa;password=Password789;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=false"
