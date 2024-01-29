@@ -4,3 +4,10 @@ GET http://localhost:5000/api/Customer/ HTTP/1.1
 {
 
 }
+
+### Get
+GET http://localhost:5000/api/controller/ HTTP/1.1
+
+{
+
+}

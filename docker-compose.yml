@@ -4,8 +4,8 @@ services:
   # React App
   client:
     build:
-      context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant-app
-      dockerfile: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant-app/Dockerfile
+      context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     # networks:
@@ -18,7 +18,7 @@ services:
   api:
     build:
       context: ./server
-      dockerfile: ./server/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     depends_on:
