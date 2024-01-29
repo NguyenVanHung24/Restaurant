@@ -2,5 +2,5 @@
 GET http://localhost:5000/api/Customer/ HTTP/1.1
 
 {
-  
+
 }

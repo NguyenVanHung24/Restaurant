@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RestaurantAPI.Models;
@@ -17,11 +16,16 @@ namespace RestaurantAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
-        }
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
 
+            Configuration = builder.Build();
+        }
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -42,19 +46,20 @@ namespace RestaurantAPI
                             .AllowAnyMethod();
                 });
             });
-            ConfigurationBuilder builder = new ConfigurationBuilder();
-            builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-               .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)
-               .AddEnvironmentVariables();
+            // ConfigurationBuilder builder = new ConfigurationBuilder();
+            // builder.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            //    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)
+            //    .AddEnvironmentVariables();
 
-            IConfiguration configuration = builder.Build();
-                        // In your Startup.cs or Program.cs, add the following line:
+            // IConfiguration configuration = builder.Build();
+            //             // In your Startup.cs or Program.cs, add the following line:
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             Console.WriteLine($"Current environment: {environment}");
 
-            services.AddSingleton<IConfiguration>(configuration);
+            // services.AddSingleton<IConfiguration>(configuration);
             services.AddDbContext<RestaurantDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            Console.WriteLine(Configuration.GetConnectionString("DevConnection"));
             Console.WriteLine(Configuration.GetConnectionString("DevConnection"));
 
         }
@@ -65,12 +70,12 @@ namespace RestaurantAPI
 
             app.UseCors("myAppCors");            
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestaurantAPI v1"));
-            }
+            // if (env.IsDevelopment())
+            // {
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestaurantAPI v1"));
+            // }
 
             app.UseRouting();
 

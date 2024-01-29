@@ -1,73 +1,72 @@
-2024-01-28 13:22:57.77 Server      Microsoft SQL Server 2017 (RTM-CU31-GDR) (KB5029376) - 14.0.3465.1 (X64) 
+2024-01-29 21:48:43.82 Server      Microsoft SQL Server 2017 (RTM-CU31-GDR) (KB5029376) - 14.0.3465.1 (X64) 
 	Jul 30 2023 15:31:58 
 	Copyright (C) 2017 Microsoft Corporation
 	Developer Edition (64-bit) on Linux (Ubuntu 18.04.6 LTS)
-2024-01-28 13:22:57.77 Server      UTC adjustment: 0:00
-2024-01-28 13:22:57.77 Server      (c) Microsoft Corporation.
-2024-01-28 13:22:57.78 Server      All rights reserved.
-2024-01-28 13:22:57.78 Server      Server process ID is 368.
-2024-01-28 13:22:57.78 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
-2024-01-28 13:22:57.78 Server      Registry startup parameters: 
+2024-01-29 21:48:43.82 Server      UTC adjustment: 0:00
+2024-01-29 21:48:43.82 Server      (c) Microsoft Corporation.
+2024-01-29 21:48:43.82 Server      All rights reserved.
+2024-01-29 21:48:43.82 Server      Server process ID is 380.
+2024-01-29 21:48:43.82 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
+2024-01-29 21:48:43.83 Server      Registry startup parameters: 
 	 -d /var/opt/mssql/data/master.mdf
 	 -l /var/opt/mssql/data/mastlog.ldf
 	 -e /var/opt/mssql/log/errorlog
-2024-01-28 13:22:57.78 Server      SQL Server detected 1 sockets with 12 cores per socket and 12 logical processors per socket, 12 total logical processors; using 12 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
-2024-01-28 13:22:57.79 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
-2024-01-28 13:22:57.79 Server      Detected 2929 MB of RAM. This is an informational message; no user action is required.
-2024-01-28 13:22:57.79 Server      Using conventional memory in the memory manager.
-2024-01-28 13:22:57.80 Server      Page exclusion bitmap is enabled.
-2024-01-28 13:22:57.90 Server      Automatic soft-NUMA was enabled because SQL Server has detected hardware NUMA nodes with greater than 8 physical cores.
-2024-01-28 13:22:57.95 Server      Buffer pool extension is already disabled. No action is necessary. 
-2024-01-28 13:22:58.06 Server      InitializeExternalUserGroupSid failed. Implied authentication will be disabled.
-2024-01-28 13:22:58.06 Server      Implied authentication manager initialization failed. Implied authentication will be disabled.
-2024-01-28 13:22:58.06 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
-2024-01-28 13:22:58.08 Server      Query Store settings initialized with enabled = 1, 
-2024-01-28 13:22:58.09 Server      The maximum number of dedicated administrator connections for this instance is '1'
-2024-01-28 13:22:58.09 Server      Node configuration: node 0: CPU mask: 0x000000000000003f:0 Active CPU mask: 0x000000000000003f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.10 Server      Node configuration: node 1: CPU mask: 0x0000000000000fc0:0 Active CPU mask: 0x0000000000000fc0:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.11 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
-2024-01-28 13:22:58.13 Server      In-Memory OLTP initialized on lowend machine.
-2024-01-28 13:22:58.17 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.19 Server      Software Usage Metrics is disabled.
-2024-01-28 13:22:58.19 spid7s      Starting up database 'master'.
-2024-01-28 13:22:58.41 spid7s      192 transactions rolled forward in database 'master' (1:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.42 spid7s      0 transactions rolled back in database 'master' (1:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.43 spid7s      Recovery is writing a checkpoint in database 'master' (1). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.50 spid7s      Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
-2024-01-28 13:22:58.50 spid7s      An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=8, LastOsError=0.
-2024-01-28 13:22:58.54 spid7s      Resource governor reconfiguration succeeded.
-2024-01-28 13:22:58.54 spid7s      SQL Server Audit is starting the audits. This is an informational message. No user action is required.
-2024-01-28 13:22:58.54 spid7s      SQL Server Audit has started the audits. This is an informational message. No user action is required.
-2024-01-28 13:22:58.63 spid7s      SQL Trace ID 1 was started by login "sa".
-2024-01-28 13:22:58.65 spid7s      Server name is 'mssql'. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.66 spid26s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.66 spid12s     Starting up database 'mssqlsystemresource'.
-2024-01-28 13:22:58.66 spid26s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.66 spid25s     Starting up database 'RestaurantDB'.
-2024-01-28 13:22:58.66 spid24s     Starting up database 'msdb'.
-2024-01-28 13:22:58.68 spid12s     The resource database build version is 14.00.3465. This is an informational message only. No user action is required.
-2024-01-28 13:22:58.74 spid12s     Starting up database 'model'.
-2024-01-28 13:22:58.79 spid25s     Parallel redo is started for database 'RestaurantDB' with worker pool size [6].
-2024-01-28 13:22:58.80 spid20s     A self-generated certificate was successfully loaded for encryption.
-2024-01-28 13:22:58.80 spid25s     13 transactions rolled forward in database 'RestaurantDB' (5:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.82 spid20s     Server is listening on [ 'any' <ipv6> 1433].
-2024-01-28 13:22:58.82 spid20s     Server is listening on [ 'any' <ipv4> 1433].
-2024-01-28 13:22:58.84 Server      Server is listening on [ ::1 <ipv6> 1434].
-2024-01-28 13:22:58.84 Server      Server is listening on [ 127.0.0.1 <ipv4> 1434].
-2024-01-28 13:22:58.84 Server      Dedicated admin connection support was established for listening locally on port 1434.
-2024-01-28 13:22:58.84 spid20s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
-2024-01-28 13:22:58.86 spid7s      0 transactions rolled back in database 'RestaurantDB' (5:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.86 spid7s      Parallel redo is shutdown for database 'RestaurantDB' with worker pool size [6].
-2024-01-28 13:22:58.89 spid24s     1 transactions rolled forward in database 'msdb' (4:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:58.93 spid12s     Polybase feature disabled.
-2024-01-28 13:22:58.93 spid12s     Clearing tempdb database.
-2024-01-28 13:22:58.97 spid7s      0 transactions rolled back in database 'msdb' (4:0). This is an informational message only. No user action is required.
-2024-01-28 13:22:59.13 spid12s     Starting up database 'tempdb'.
-2024-01-28 13:22:59.23 spid12s     The tempdb database has 1 data file(s).
-2024-01-28 13:22:59.23 spid26s     The Service Broker endpoint is in disabled or stopped state.
-2024-01-28 13:22:59.24 spid26s     The Database Mirroring endpoint is in disabled or stopped state.
-2024-01-28 13:22:59.25 spid26s     Service Broker manager has started.
-2024-01-28 13:22:59.35 spid7s      Recovery is complete. This is an informational message only. No user action is required.
-2024-01-28 13:28:02.29 spid54      Using 'dbghelp.dll' version '4.0.5'
-2024-01-28 13:29:59.12 spid54      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
-2024-01-28 13:29:59.14 spid54      Using 'xplog70.dll' version '2017.140.3465' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2024-01-29 21:48:43.83 Server      SQL Server detected 1 sockets with 12 cores per socket and 12 logical processors per socket, 12 total logical processors; using 12 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
+2024-01-29 21:48:43.83 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
+2024-01-29 21:48:43.83 Server      Detected 2929 MB of RAM. This is an informational message; no user action is required.
+2024-01-29 21:48:43.84 Server      Using conventional memory in the memory manager.
+2024-01-29 21:48:43.84 Server      Page exclusion bitmap is enabled.
+2024-01-29 21:48:43.92 Server      Automatic soft-NUMA was enabled because SQL Server has detected hardware NUMA nodes with greater than 8 physical cores.
+2024-01-29 21:48:43.96 Server      Buffer pool extension is already disabled. No action is necessary. 
+2024-01-29 21:48:44.07 Server      InitializeExternalUserGroupSid failed. Implied authentication will be disabled.
+2024-01-29 21:48:44.07 Server      Implied authentication manager initialization failed. Implied authentication will be disabled.
+2024-01-29 21:48:44.07 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
+2024-01-29 21:48:44.09 Server      Query Store settings initialized with enabled = 1, 
+2024-01-29 21:48:44.11 Server      The maximum number of dedicated administrator connections for this instance is '1'
+2024-01-29 21:48:44.11 Server      Node configuration: node 0: CPU mask: 0x000000000000003f:0 Active CPU mask: 0x000000000000003f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.11 Server      Node configuration: node 1: CPU mask: 0x0000000000000fc0:0 Active CPU mask: 0x0000000000000fc0:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.13 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
+2024-01-29 21:48:44.14 Server      In-Memory OLTP initialized on lowend machine.
+2024-01-29 21:48:44.19 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.20 Server      Software Usage Metrics is disabled.
+2024-01-29 21:48:44.22 spid6s      Starting up database 'master'.
+2024-01-29 21:48:44.27 spid6s      189 transactions rolled forward in database 'master' (1:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.28 spid6s      0 transactions rolled back in database 'master' (1:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.29 spid6s      Recovery is writing a checkpoint in database 'master' (1). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.34 spid6s      Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
+2024-01-29 21:48:44.34 spid6s      An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=8, LastOsError=0.
+2024-01-29 21:48:44.37 spid6s      Resource governor reconfiguration succeeded.
+2024-01-29 21:48:44.37 spid6s      SQL Server Audit is starting the audits. This is an informational message. No user action is required.
+2024-01-29 21:48:44.37 spid6s      SQL Server Audit has started the audits. This is an informational message. No user action is required.
+2024-01-29 21:48:44.44 spid6s      SQL Trace ID 1 was started by login "sa".
+2024-01-29 21:48:44.46 spid6s      Server name is 'mssql'. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.47 spid26s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.48 spid12s     Starting up database 'mssqlsystemresource'.
+2024-01-29 21:48:44.48 spid25s     Starting up database 'msdb'.
+2024-01-29 21:48:44.48 spid24s     Starting up database 'RestaurantDB'.
+2024-01-29 21:48:44.48 spid26s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.48 spid12s     The resource database build version is 14.00.3465. This is an informational message only. No user action is required.
+2024-01-29 21:48:44.50 spid12s     Starting up database 'model'.
+2024-01-29 21:48:44.57 spid24s     Parallel redo is started for database 'RestaurantDB' with worker pool size [6].
+2024-01-29 21:48:44.57 spid20s     A self-generated certificate was successfully loaded for encryption.
+2024-01-29 21:48:44.58 spid20s     Server is listening on [ 'any' <ipv6> 1433].
+2024-01-29 21:48:44.58 spid20s     Server is listening on [ 'any' <ipv4> 1433].
+2024-01-29 21:48:44.58 spid24s     1 transactions rolled forward in database 'RestaurantDB' (5:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.59 Server      Server is listening on [ ::1 <ipv6> 1434].
+2024-01-29 21:48:44.59 Server      Server is listening on [ 127.0.0.1 <ipv4> 1434].
+2024-01-29 21:48:44.59 Server      Dedicated admin connection support was established for listening locally on port 1434.
+2024-01-29 21:48:44.60 spid20s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
+2024-01-29 21:48:44.61 spid12s     Polybase feature disabled.
+2024-01-29 21:48:44.61 spid12s     Clearing tempdb database.
+2024-01-29 21:48:44.63 spid25s     1 transactions rolled forward in database 'msdb' (4:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.67 spid6s      0 transactions rolled back in database 'RestaurantDB' (5:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.68 spid6s      Parallel redo is shutdown for database 'RestaurantDB' with worker pool size [6].
+2024-01-29 21:48:44.78 spid6s      0 transactions rolled back in database 'msdb' (4:0). This is an informational message only. No user action is required.
+2024-01-29 21:48:44.78 spid12s     Starting up database 'tempdb'.
+2024-01-29 21:48:44.91 spid12s     The tempdb database has 1 data file(s).
+2024-01-29 21:48:44.92 spid26s     The Service Broker endpoint is in disabled or stopped state.
+2024-01-29 21:48:44.92 spid26s     The Database Mirroring endpoint is in disabled or stopped state.
+2024-01-29 21:48:44.93 spid26s     Service Broker manager has started.
+2024-01-29 21:48:44.93 spid6s      Recovery is complete. This is an informational message only. No user action is required.
+2024-01-29 14:55:43.29 spid54      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2024-01-29 14:55:43.31 spid54      Using 'xplog70.dll' version '2017.140.3465' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.

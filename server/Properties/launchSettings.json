@@ -13,7 +13,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     "RestaurantAPI": {
       "commandName": "Project",
@@ -25,8 +27,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Deploy": {
-      "commandName": "Project1",
+    "Production": {
+      "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
       "launchUrl": "swagger",
