@@ -60,7 +60,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             context: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant   
-            file: ./React-js-Master-Detail-CRUD-with-Asp.Net-Web-API/restaurant/Dockerfile
+            file: Dockerfile
             push: true
             tags: ${{ env.IMAGE_NAME }}:latest
             labels: ${{ steps.meta.outputs.labels }}
